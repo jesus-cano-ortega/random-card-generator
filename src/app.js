@@ -25,7 +25,6 @@ function createDeck() {
 }
 
 let deck = createDeck();
-console.log(deck);
 
 //Function that shows a random card inside the created deck
 function randomNumber() {
@@ -65,12 +64,12 @@ differentSuit.addEventListener("click", () => {
 });
 
 //Create a function that show a unique random card without repeating
+//Variable that counts the number of cards remaining in the deck
 let count = 51;
 
 noRepeat.addEventListener("click", () => {
   let newDeck = deck.filter(card => card.used === false);
   let cardToShow = newDeck[Math.floor(Math.random() * count)];
-  console.log(count);
 
   if (newDeck.length != 0) {
     removeClass();
@@ -79,8 +78,6 @@ noRepeat.addEventListener("click", () => {
     cardToShow.used = true;
     count--;
   } else {
-    console.error("fin");
+    console.error("There are no more cards in the deck");
   }
-
-  console.log(newDeck);
 });
