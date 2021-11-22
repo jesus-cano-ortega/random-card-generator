@@ -76,8 +76,10 @@ noRepeat.addEventListener("click", () => {
     cardNumber.classList.add(cardToShow.suit);
     cardNumber.innerHTML = `<p>${cardToShow.value}</p>`;
     cardToShow.used = true;
+    console.log(newDeck);
     count--;
   } else {
-    console.error("There are no more cards in the deck");
+    alert("There are no more cards in the deck. Accept to start again!");
+    window.location.reload();
   }
 });
